@@ -16,7 +16,9 @@ namespace Timeline {
     public static class Realities
     {
         public static Dictionary<string, Reality> realities = new Dictionary<string, Reality>() {
-            { "root", new Reality("root", new string[] {"test1", "test2"}) }
+            { "root", new Reality("root", new string[] {"radiationDeath", "survival"}) },
+            { "radiationDeath", new Reality("radiationDeath", new string[] {"root"}) },
+            { "survival", new Reality("survival", new string[] {"root"}) },
         };
     }
 }

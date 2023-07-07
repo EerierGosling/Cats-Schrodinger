@@ -5,12 +5,13 @@ using UnityEngine.SceneManagement;
 using Timeline;
 
 public class TimelineManager : MonoBehaviour
-{
-    public StringSO currentRealityId;
-    
+{   
+    public StringSO currentReality;
+
     public void LoadReality(string id)
     {
-        currentRealityId.Value = id;
+        // set the current reality
+        currentReality.Value = id;
 
         // load the scene with the given id
         SceneManager.LoadScene(id);
@@ -18,7 +19,7 @@ public class TimelineManager : MonoBehaviour
 
     public Reality CurrentReality {
         get {
-            return Realities.realities.GetValueOrDefault(currentRealityId.Value);
+            return Realities.realities.GetValueOrDefault(currentReality.Value);
         }
     }
 }
