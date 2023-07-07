@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2997793875177967920}
   - component: {fileID: 8374882522042920103}
-  - component: {fileID: 5696331202923408846}
   m_Layer: 0
   m_Name: Square
   m_TagString: Untagged
@@ -26,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4388442217571567511}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.37, y: -0.34, z: 0}
+  m_LocalPosition: {x: 2.338825, y: -0.1831181, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -85,22 +84,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5696331202923408846
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4388442217571567511}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4b2488bbe16ffd4a8ee5688e9edc7fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  messages:
-  - You die of Radiation Poisioning
-  splits:
-  - radiationDeath
 --- !u!1 &5366854876785214771
 GameObject:
   m_ObjectHideFlags: 0
@@ -111,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3720555877037391063}
   m_Layer: 0
-  m_Name: root
+  m_Name: radDeath
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
