@@ -1,25 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using Timeline;
 
 public class TimelineManager : MonoBehaviour
-{   
-    public StringSO currentReality;
+{
+    public List<string> realityIds;
+    public List<GameObject> realityPrefabs;
+    public GameObject realityContainer;
 
-    public void LoadReality(string id)
+    void Start()
     {
-        // set the current reality
-        currentReality.Value = id;
-
-        // load the scene with the given id
-        SceneManager.LoadScene(id);
+        SwapReality("root");
     }
 
-    public Reality CurrentReality {
-        get {
-            return Realities.realities.GetValueOrDefault(currentReality.Value);
+    void SwapReality(string id)
+    {
+        // clear the reality container
+        foreach (Transform child in realityContainer.transform)
+        {
+            Destroy(child.gameObject);
         }
+
+        // instantiate the new reality
+        GameObject newReality = Instantiate(realityPrefabs[realityIds.IndexOf(id)], realityContainer.transform);
+        // newReality.transform.localPosition = Vector3.zero;
+
+        // append it to the reality container
+        newReality.transform.SetParent(realityContainer.transform, false);
     }
 }
