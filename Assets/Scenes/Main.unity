@@ -1418,6 +1418,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   optionShower: {fileID: 1264755418}
+  focus: {fileID: 0}
   cam: {fileID: 1029978314}
 --- !u!50 &827927698
 Rigidbody2D:
