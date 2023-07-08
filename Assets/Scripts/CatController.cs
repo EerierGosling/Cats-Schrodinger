@@ -63,7 +63,7 @@ public class CatController : MonoBehaviour
                 }
             }
         }
-
+    }
     private void OnMovementPerformed(InputAction.CallbackContext value)
     {
         moveVector = value.ReadValue<Vector2>();
@@ -72,6 +72,5 @@ public class CatController : MonoBehaviour
     private void OnMovementCanceled(InputAction.CallbackContext value)
     {
         moveVector = Vector2.zero;
-    }
     }
 }
