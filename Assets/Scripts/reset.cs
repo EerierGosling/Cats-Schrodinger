@@ -5,13 +5,19 @@ using UnityEngine.UI;
 
 public class reset : MonoBehaviour
 {
-    TimelineManager timelineManager;
-    Button button;
+    private TimelineManager timelineManager;
+    private Button button;
+    private CatController catController;
+    private AudioSource audioSource;
 
     void Start()
     {
+        catController = GameObject.FindObjectOfType<CatController>();
         timelineManager = GameObject.FindObjectOfType<TimelineManager>();
+
         button = GetComponent<Button>();
+        audioSource = GetComponent<AudioSource>();
+
         button.onClick.AddListener(OnButtonClick);
     }
 
@@ -23,5 +29,9 @@ public class reset : MonoBehaviour
     void OnButtonClick()
     {
         timelineManager.SwapReality("root");
+
+        catController.ResetPos();
+
+        audioSource.Play();
     }
 }
