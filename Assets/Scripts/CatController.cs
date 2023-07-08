@@ -59,21 +59,14 @@ public class CatController : MonoBehaviour
             if (Physics.Raycast(ray, out hit, 100)){
                 Interactable interactable = hit.collider.GetComponent<Interactable>();
                 if (interactable != null){
-                    SetFocus();
-                    // interact with object
+                    float distance = Vector3.Distance(player.position, transform.position);
+                    if (distance <= radius){
+                        Debug.Log("Interact");
+                        // interact with the object
+                    }
                 }
             }
         }
-    }
-
-    void SetFocus (Interactable newFocus) {
-        if (newFocus != focus){
-            if (focus != null)
-            focus.OnDefocused();
-            focus = newFocus;
-        }
-
-        newFocus.OnFocused(transform);
     }
 
     private void OnMovementPerformed(InputAction.CallbackContext value)
