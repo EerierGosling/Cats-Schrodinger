@@ -17,7 +17,6 @@ public class CatController : MonoBehaviour
     private Rigidbody2D rb;
     public float moveSpeed = 5f;
     public OptionShower optionShower;
-    public Interactable focus;
     public Camera cam;
 
     private void Awake()
@@ -53,9 +52,25 @@ public class CatController : MonoBehaviour
         rb.velocity = moveVector * moveSpeed;
 
         if (Input.GetMouseButtonDown(1)){
-            
+            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit, 100)){
+                Interactable interactable = hit.collider.GetComponent<Interactable>();
+                float radius = interactable.radius;
+                Transform player = transform;
+                Transform interactableTransform = interactable.transform;
+                if (interactable != null){
+                    float distance = Vector3.Distance(player.position, interactableTransform.position);
+                    if (distance <= radius){
+                        Debug.Log("Interact");
+                        // interact with the object
+                    }
+                }
+            }
         }
     }
+
     private void OnMovementPerformed(InputAction.CallbackContext value)
     {
         moveVector = value.ReadValue<Vector2>();
