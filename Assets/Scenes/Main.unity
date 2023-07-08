@@ -398,6 +398,14 @@ PrefabInstance:
       propertyPath: m_fontSizeBase
       value: 73.05
       objectReference: {fileID: 0}
+    - target: {fileID: 3262451596758453485, guid: 4eacf95da19352c43ab31b1578d4e3db, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3262451596758453485, guid: 4eacf95da19352c43ab31b1578d4e3db, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 4e2f69d4ff5f7704e8260f4735e7793a, type: 3}
     - target: {fileID: 6161710925913901002, guid: 4eacf95da19352c43ab31b1578d4e3db, type: 3}
       propertyPath: m_Name
       value: UI Button
@@ -432,7 +440,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7598008973012355734, guid: 4eacf95da19352c43ab31b1578d4e3db, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 497.1
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7598008973012355734, guid: 4eacf95da19352c43ab31b1578d4e3db, type: 3}
       propertyPath: m_SizeDelta.y
@@ -499,7 +507,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 5991708529869979944, guid: 4eacf95da19352c43ab31b1578d4e3db, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 6161710925913901002, guid: 4eacf95da19352c43ab31b1578d4e3db, type: 3}
@@ -672,8 +681,8 @@ Transform:
   m_GameObject: {fileID: 827927693}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
@@ -3346,7 +3355,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Padding:
     m_Left: 0
-    m_Right: -66
+    m_Right: 0
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 2
