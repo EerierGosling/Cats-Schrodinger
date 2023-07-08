@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class splitInteractible : MonoBehaviour
 {
-    private TimelineManager timelineManager;
     private OptionShower optionShower;
     private GameObject cat;
     private GameObject prompt;
@@ -20,7 +19,6 @@ public class splitInteractible : MonoBehaviour
     {
         // get the object tagged "Player"
         cat = GameObject.FindGameObjectWithTag("Player");
-        timelineManager = GameObject.FindObjectOfType<TimelineManager>();
         optionShower = GameObject.FindObjectOfType<OptionShower>();
 
         prompt = Instantiate(promptPrefab, transform.position, Quaternion.identity);
