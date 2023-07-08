@@ -778,6 +778,17 @@ MonoBehaviour:
   m_DeselectOnBackgroundClick: 1
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
+--- !u!114 &789007740 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8104732312733938334, guid: e3fefe69e088db649a5a98da56186b84, type: 3}
+  m_PrefabInstance: {fileID: 225632336}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78db4d8e27ef38a418f8423d1e99c03a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &823702254
 GameObject:
   m_ObjectHideFlags: 0
@@ -1030,6 +1041,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  optionShower: {fileID: 789007740}
 --- !u!50 &827927698
 Rigidbody2D:
   serializedVersion: 4

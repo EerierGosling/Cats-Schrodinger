@@ -16,6 +16,7 @@ public class CatController : MonoBehaviour
     private Vector2 moveVector = Vector2.zero;
     private Rigidbody2D rb;
     public float moveSpeed = 5f;
+    public OptionShower optionShower;
 
     private void Awake()
     {
@@ -39,6 +40,12 @@ public class CatController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if(optionShower.inMenu)
+        {
+            rb.velocity = Vector2.zero;
+            return;
+        }
+
         // Vector3Int gridPosition = groundTilemap.WorldToCell(transform.position + (Vector3)moveVector);
         // if (groundTilemap.HasTile(gridPosition) && !wallTileMap.HasTile(gridPosition))
         rb.velocity = moveVector * moveSpeed;

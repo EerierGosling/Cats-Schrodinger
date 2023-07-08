@@ -19,6 +19,8 @@ public class OptionShower : MonoBehaviour
     public LineAnimator line1;
     public LineAnimator line2;
 
+    public bool inMenu = false;
+
     void Start()
     {
         timelineManager.OnRealitySwap += RemoveButtons;
@@ -26,6 +28,8 @@ public class OptionShower : MonoBehaviour
 
     public void RemoveButtons(string id)
     {
+        inMenu = false;
+
         dimmer.SetActive(false);
         splitText.SetActive(false);
 
@@ -40,6 +44,8 @@ public class OptionShower : MonoBehaviour
 
     public void OpenNav(string text1, string text2, string load1, string load2)
     {
+        inMenu = true;
+
         dimmer.SetActive(true);
         splitText.SetActive(true);
 
