@@ -6,6 +6,6 @@ public class Interactable : MonoBehaviour
 
     void OnDrawGizmosSelected () {
         Gizmos.color = Color.yellow;
-        Gizmos.DrawWireCircle(transform.position, radius);
+        Gizmos.DrawWireSphere(transform.position, radius);
     }
 }

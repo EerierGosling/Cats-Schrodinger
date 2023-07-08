@@ -17,6 +17,8 @@ public class CatController : MonoBehaviour
     private Rigidbody2D rb;
     public float moveSpeed = 5f;
     public OptionShower optionShower;
+    public Interactable focus;
+    public Camera cam;
 
     private void Awake()
     {
@@ -49,6 +51,35 @@ public class CatController : MonoBehaviour
         // Vector3Int gridPosition = groundTilemap.WorldToCell(transform.position + (Vector3)moveVector);
         // if (groundTilemap.HasTile(gridPosition) && !wallTileMap.HasTile(gridPosition))
         rb.velocity = moveVector * moveSpeed;
+
+        if (Input.GetMouseButtonDown(1)){
+            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit, 100)){
+                Interactable interactable = hit.collider.GetComponent<Interactable>;
+                if (interactable != null){
+                    SetFocus(interactable);
+                }
+            }
+        }
+
+        if (Input.GetMouseButtonDown(0)){
+            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit, 100)){
+                RemoveFocus();
+            }
+        }
+    }
+
+    void SetFocus (Interactable newFocus){
+        focus = newFocus;
+    }
+
+    void RemoveFocus (){
+        focus = null;
     }
 
     private void OnMovementPerformed(InputAction.CallbackContext value)
