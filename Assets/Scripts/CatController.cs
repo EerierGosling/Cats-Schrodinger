@@ -21,6 +21,7 @@ public class CatController : MonoBehaviour
     {
         controls = new CatMovement();
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     private void OnEnable()
