@@ -22,6 +22,7 @@ public class CatController : MonoBehaviour
         controls = new CatMovement();
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        startPos = transform.position;
     }
 
     private void OnEnable()
@@ -49,8 +50,10 @@ public class CatController : MonoBehaviour
         rb.velocity = moveVector * moveSpeed;
     }
 
-    private void Update(){
-        if (Input.GetMouseButtonDown(1)){
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(1))
+        {
             Debug.Log("Right Click");
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
