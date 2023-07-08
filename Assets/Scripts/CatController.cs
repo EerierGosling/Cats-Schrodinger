@@ -48,14 +48,17 @@ public class CatController : MonoBehaviour
 
         rb.velocity = moveVector * moveSpeed;
 
-        if (Input.GetMouseButtonDown(1)){
+        if (Input.GetMouseButtonDown(1))
+        {
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
-            if (Physics.Raycast(ray, out hit, 100)){
+            if (Physics.Raycast(ray, out hit, 100))
+            {
                 Interactable interactable = hit.collider.GetComponent<Interactable>();
 
-                if (interactable != null){
+                if (interactable != null)
+                {
                     SetFocus(interactable);
                 }
             }
@@ -67,8 +70,10 @@ public class CatController : MonoBehaviour
         transform.position = startPos;
     }
 
-    void SetFocus(Interactable newFocus){
-        if (newFocus != focus){
+    void SetFocus(Interactable newFocus)
+    {
+        if (newFocus != focus)
+        {
             if (focus != null)
                 focus.OnDefocused();
             focus = newFocus;
@@ -77,7 +82,8 @@ public class CatController : MonoBehaviour
         newFocus.OnFocused(transform);
     }
 
-    void RemoveFocus(){
+    void RemoveFocus()
+    {
         if (focus != null)
             focus.OnDefocused();
         focus = null;
@@ -86,7 +92,10 @@ public class CatController : MonoBehaviour
     {
         moveVector = value.ReadValue<Vector2>();
 
-        animator.SetFloat("X", moveVector.x);
+        if (moveVector.x != 0)
+            animator.SetFloat("X", moveVector.x);
+        else
+            animator.SetFloat("X", animator.GetFloat("X") / 2);
         animator.SetFloat("Y", moveVector.y);
         animator.SetBool("Moving", true);
     }
@@ -94,7 +103,7 @@ public class CatController : MonoBehaviour
     private void OnMovementCanceled(InputAction.CallbackContext value)
     {
         moveVector = Vector2.zero;
-        
+
         animator.SetBool("Moving", false);
     }
 }
