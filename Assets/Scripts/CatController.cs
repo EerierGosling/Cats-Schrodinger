@@ -17,6 +17,7 @@ public class CatController : MonoBehaviour
     private Rigidbody2D rb;
     public float moveSpeed = 5f;
     public OptionShower optionShower;
+    public Interactable focus;
     public Camera cam;
 
     private Vector3 startPos;
@@ -60,15 +61,9 @@ public class CatController : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit, 100)){
                 Interactable interactable = hit.collider.GetComponent<Interactable>();
-                float radius = interactable.radius;
-                Transform player = transform;
-                Transform interactableTransform = interactable.transform;
+
                 if (interactable != null){
-                    float distance = Vector3.Distance(player.position, interactableTransform.position);
-                    if (distance <= radius){
-                        Debug.Log("Interact");
-                        // interact with the object
-                    }
+                    SetFocus(interactable);
                 }
             }
         }
@@ -77,6 +72,22 @@ public class CatController : MonoBehaviour
     public void ResetPos()
     {
         transform.position = startPos;
+    }
+
+    void SetFocus(Interactable newFocus){
+        if (newFocus != focus){
+            if (focus != null)
+                focus.OnDefocused();
+            focus = newFocus;
+        }
+
+        newFocus.OnFocused(transform);
+    }
+
+    void RemoveFocus(){
+        if (focus != null)
+            focus.OnDefocused();
+        focus = null;
     }
 
     private void OnMovementPerformed(InputAction.CallbackContext value)
