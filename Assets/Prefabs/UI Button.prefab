@@ -27,7 +27,7 @@ RectTransform:
   m_GameObject: {fileID: 5991708529869979944}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 7598008973012355734}
@@ -93,8 +93,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 90
-  m_fontSizeBase: 90
+  m_fontSize: 59.89
+  m_fontSizeBase: 59.89
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 0
@@ -147,6 +147,7 @@ GameObject:
   - component: {fileID: 2794049543714007047}
   - component: {fileID: 3262451596758453485}
   - component: {fileID: 4728365559362994649}
+  - component: {fileID: 2923778247757646968}
   m_Layer: 5
   m_Name: UI Button
   m_TagString: Untagged
@@ -257,3 +258,15 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &2923778247757646968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6161710925913901002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3125b5e4dde92f544a539bb63de5eda0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

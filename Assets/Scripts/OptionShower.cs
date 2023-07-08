@@ -44,7 +44,7 @@ public class OptionShower : MonoBehaviour
     {
         GameObject button = Instantiate(buttonPrefab, optionsParent.transform);
         button.GetComponent<RectTransform>().anchoredPosition = new Vector2(x, y);
-        button.GetComponentInChildren<TextMeshProUGUI>().text = text;
+        button.GetComponent<FitText>().UpdateText(text);
         return button;
     }
 }
