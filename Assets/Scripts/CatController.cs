@@ -19,10 +19,13 @@ public class CatController : MonoBehaviour
     public OptionShower optionShower;
     public Camera cam;
 
+    private Vector3 startPos;
+
     private void Awake()
     {
         controls = new CatMovement();
         rb = GetComponent<Rigidbody2D>();
+        startPos = transform.position;
     }
 
     private void OnEnable()
@@ -69,6 +72,11 @@ public class CatController : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void ResetPos()
+    {
+        transform.position = startPos;
     }
 
     private void OnMovementPerformed(InputAction.CallbackContext value)

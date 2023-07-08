@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27dc193dadcdf0046bfc9297cba86aba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text1: You die of radiation
+  text1: You die of poisoning
   text2: You survive
   load1: radiationDeath
   load2: survival
