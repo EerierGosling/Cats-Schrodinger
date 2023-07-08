@@ -53,9 +53,29 @@ public class CatController : MonoBehaviour
         rb.velocity = moveVector * moveSpeed;
 
         if (Input.GetMouseButtonDown(1)){
-            
+            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit, 100)){
+                Interactable interactable = hit.collider.GetComponent<Interactable>();
+                if (interactable != null){
+                    SetFocus();
+                    // interact with object
+                }
+            }
         }
     }
+
+    void SetFocus (Interactable newFocus) {
+        if (newFocus != focus){
+            if (focus != null)
+            focus.OnDefocused();
+            focus = newFocus;
+        }
+
+        newFocus.OnFocused(transform);
+    }
+
     private void OnMovementPerformed(InputAction.CallbackContext value)
     {
         moveVector = value.ReadValue<Vector2>();
