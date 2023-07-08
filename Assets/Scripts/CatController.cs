@@ -7,22 +7,19 @@ using UnityEngine.Tilemaps;
 public class CatController : MonoBehaviour
 {
 
-    // [SerializeField]
-    // private Tilemap groundTilemap;
-    // [SerializeField]
-    // private Tilemap wallTileMap;
-
     private CatMovement controls;
     private Vector2 moveVector = Vector2.zero;
     private Rigidbody2D rb;
     public float moveSpeed = 5f;
     public OptionShower optionShower;
     public Camera cam;
+    private Animator animator;
 
     private void Awake()
     {
         controls = new CatMovement();
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     private void OnEnable()
@@ -41,14 +38,12 @@ public class CatController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(optionShower.inMenu)
+        if (optionShower.inMenu)
         {
             rb.velocity = Vector2.zero;
             return;
         }
 
-        // Vector3Int gridPosition = groundTilemap.WorldToCell(transform.position + (Vector3)moveVector);
-        // if (groundTilemap.HasTile(gridPosition) && !wallTileMap.HasTile(gridPosition))
         rb.velocity = moveVector * moveSpeed;
 
         if (Input.GetMouseButtonDown(1)){
@@ -70,14 +65,19 @@ public class CatController : MonoBehaviour
             }
         }
     }
-
     private void OnMovementPerformed(InputAction.CallbackContext value)
     {
         moveVector = value.ReadValue<Vector2>();
+
+        animator.SetFloat("X", moveVector.x);
+        animator.SetFloat("Y", moveVector.y);
+        animator.SetBool("Moving", true);
     }
 
     private void OnMovementCanceled(InputAction.CallbackContext value)
     {
         moveVector = Vector2.zero;
+        
+        animator.SetBool("Moving", false);
     }
 }
