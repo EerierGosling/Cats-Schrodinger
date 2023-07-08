@@ -11,6 +11,12 @@ public class OptionShower : MonoBehaviour
     public GameObject optionsParent;
     public GameObject buttonPrefab;
     public TimelineManager timelineManager;
+    public Vector3 button1Pos;
+    public Vector3 button2Pos;
+    
+    public GameObject dimmer;
+    public LineAnimator line1;
+    public LineAnimator line2;
 
     void Start()
     {
@@ -19,25 +25,40 @@ public class OptionShower : MonoBehaviour
 
     public void RemoveButtons(string id)
     {
+        dimmer.SetActive(false);
+        line1.Reset();
+        line2.Reset();
+
         foreach (Transform child in optionsParent.transform)
         {
             Destroy(child.gameObject);
         }
     }
 
-    public List<GameObject> CreateButtons(string[] text, float spacing = 550f)
+    public void OpenNav(string text1, string text2, string load1, string load2)
     {
-        List<GameObject> buttons = new List<GameObject>();
+        dimmer.SetActive(true);
 
-        float x = - ((text.Length - 1) * spacing / 2f);
+        line1.beginAnimation();
+        line2.beginAnimation();
 
-        for (int i = 0; i < text.Length; i++)
-        {
-            buttons.Add(CreateButton(text[i], x, 0));
+        // create the buttons after 1 second
+        StartCoroutine(CreateButtonsAfterDelay(text1, text2, load1, load2, 1f));
+    }
 
-            x += spacing;
-        }
-        return buttons;
+    IEnumerator CreateButtonsAfterDelay(string text1, string text2, string load1, string load2, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        CreateButtons(text1, text2, load1, load2);
+    }
+
+    void CreateButtons(string text1, string text2, string load1, string load2)
+    {
+        GameObject button1 = CreateButton(text1, button1Pos.x, button1Pos.y);
+        GameObject button2 = CreateButton(text2, button2Pos.x, button2Pos.y);
+
+        button1.GetComponent<Button>().onClick.AddListener(() => timelineManager.SwapReality(load1));
+        button2.GetComponent<Button>().onClick.AddListener(() => timelineManager.SwapReality(load2));
     }
 
     public GameObject CreateButton(string text, float x, float y)
