@@ -673,7 +673,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2923778247757646968, guid: 4eacf95da19352c43ab31b1578d4e3db, type: 3}
     m_RemovedGameObjects:
     - {fileID: 5991708529869979944, guid: 4eacf95da19352c43ab31b1578d4e3db, type: 3}
     m_AddedGameObjects: []
@@ -1433,6 +1434,7 @@ MonoBehaviour:
   - {fileID: 5366854876785214771, guid: 3e6e2f94f76edc34e89f985d62939ce5, type: 3}
   - {fileID: 5366854876785214771, guid: 926d5983db4e0ef40a589ac4f04c7e1d, type: 3}
   realityContainer: {fileID: 263154052}
+  currentRealityId: 
 --- !u!4 &1003423895
 Transform:
   m_ObjectHideFlags: 0

@@ -9,6 +9,8 @@ public class TimelineManager : MonoBehaviour
     public List<GameObject> realityPrefabs;
     public GameObject realityContainer;
 
+    public string currentRealityId;
+
     void Start()
     {
         SwapReality("root");
@@ -18,6 +20,8 @@ public class TimelineManager : MonoBehaviour
 
     public void SwapReality(string id)
     {
+        currentRealityId = id;
+
         OnRealitySwap?.Invoke(id);
 
         // clear the reality container

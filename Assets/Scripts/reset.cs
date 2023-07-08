@@ -6,11 +6,18 @@ using UnityEngine.UI;
 public class reset : MonoBehaviour
 {
     TimelineManager timelineManager;
+    Button button;
 
     void Start()
     {
         timelineManager = GameObject.FindObjectOfType<TimelineManager>();
-        GetComponent<Button>().onClick.AddListener(OnButtonClick);
+        button = GetComponent<Button>();
+        button.onClick.AddListener(OnButtonClick);
+    }
+
+    void Update()
+    {
+        button.interactable = timelineManager.currentRealityId != "root";
     }
 
     void OnButtonClick()
