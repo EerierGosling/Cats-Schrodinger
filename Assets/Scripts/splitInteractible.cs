@@ -24,6 +24,9 @@ public class splitInteractible : MonoBehaviour
         prompt = Instantiate(promptPrefab, transform.position, Quaternion.identity);
         // place it above the object
         prompt.transform.position += new Vector3(0, 1f, 0);
+
+        // make it a child of the object
+        prompt.transform.parent = transform;
     }
 
     void Update()
