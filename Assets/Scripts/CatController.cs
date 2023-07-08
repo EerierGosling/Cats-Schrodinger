@@ -47,8 +47,11 @@ public class CatController : MonoBehaviour
         }
 
         rb.velocity = moveVector * moveSpeed;
+    }
 
+    private void Update(){
         if (Input.GetMouseButtonDown(1)){
+            Debug.Log("Right Click");
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 

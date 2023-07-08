@@ -7,11 +7,17 @@ public class Interactable : MonoBehaviour
     Transform player;
     bool hasInteracted = false;
 
+    public virtual void Interact () {
+        // This method is meant to be overwritten
+        Debug.Log("Interacting with " + transform.name);
+    }
+
     void Update () {
         if (isFocus && !hasInteracted) {
             float distance = Vector3.Distance(player.position, transform.position);
             if (distance <= radius) {
                 Debug.Log("Interact");
+                Interact();
                 hasInteracted = true;
             }
         }
