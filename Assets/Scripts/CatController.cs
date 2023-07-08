@@ -59,28 +59,10 @@ public class CatController : MonoBehaviour
             if (Physics.Raycast(ray, out hit, 100)){
                 Interactable interactable = hit.collider.GetComponent<Interactable>;
                 if (interactable != null){
-                    SetFocus(interactable);
+                    // pick up and place in inventory
                 }
             }
         }
-
-        if (Input.GetMouseButtonDown(0)){
-            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-
-            if (Physics.Raycast(ray, out hit, 100)){
-                RemoveFocus();
-            }
-        }
-    }
-
-    void SetFocus (Interactable newFocus){
-        focus = newFocus;
-    }
-
-    void RemoveFocus (){
-        focus = null;
-    }
 
     private void OnMovementPerformed(InputAction.CallbackContext value)
     {
@@ -90,5 +72,6 @@ public class CatController : MonoBehaviour
     private void OnMovementCanceled(InputAction.CallbackContext value)
     {
         moveVector = Vector2.zero;
+    }
     }
 }
