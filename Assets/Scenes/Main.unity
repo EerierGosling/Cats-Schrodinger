@@ -1773,6 +1773,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FollowSpeed: 5
   target: {fileID: 827927696}
+  maxLeft: -3.5
+  maxRight: 5.5
+  maxUp: 14.38
+  maxDown: -2.4
 --- !u!1 &1069151897
 GameObject:
   m_ObjectHideFlags: 0
