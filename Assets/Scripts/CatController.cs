@@ -14,7 +14,6 @@ public class CatController : MonoBehaviour
     public OptionShower optionShower;
     public Interactable focus;
     public Camera cam;
-
     private Vector3 startPos;
     private Animator animator;
 
