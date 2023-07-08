@@ -1,18 +1,18 @@
 {
-    "name": "CatControls",
+    "name": "CatMovement",
     "maps": [
         {
-            "name": "Main",
+            "name": "Cat",
             "id": "16f477a5-cdf0-4a95-8a14-ae888e697a84",
             "actions": [
                 {
                     "name": "Movement",
-                    "type": "PassThrough",
+                    "type": "Value",
                     "id": "096258d5-2013-46d0-8edf-2833f1e5f574",
                     "expectedControlType": "Vector2",
-                    "processors": "NormalizeVector2",
-                    "interactions": "Hold",
-                    "initialStateCheck": false
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
