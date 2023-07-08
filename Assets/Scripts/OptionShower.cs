@@ -15,6 +15,7 @@ public class OptionShower : MonoBehaviour
     public Vector3 button2Pos;
     
     public GameObject dimmer;
+    public GameObject splitText;
     public LineAnimator line1;
     public LineAnimator line2;
 
@@ -26,6 +27,7 @@ public class OptionShower : MonoBehaviour
     public void RemoveButtons(string id)
     {
         dimmer.SetActive(false);
+        splitText.SetActive(false);
 
         line1.ResetAnim();
         line2.ResetAnim();
@@ -39,6 +41,7 @@ public class OptionShower : MonoBehaviour
     public void OpenNav(string text1, string text2, string load1, string load2)
     {
         dimmer.SetActive(true);
+        splitText.SetActive(true);
 
         line1.beginAnimation();
         line2.beginAnimation();
