@@ -44,17 +44,6 @@ public class CatController : MonoBehaviour
         rb.velocity = moveVector * moveSpeed;
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     private void OnMovementPerformed(InputAction.CallbackContext value)
     {
         moveVector = value.ReadValue<Vector2>();
