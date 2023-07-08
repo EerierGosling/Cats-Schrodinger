@@ -9,9 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Main.unity
     guid: a193cf54015e3bb4489e1265d59e1436
   - enabled: 1
-    path: Assets/Scenes/radiationDeath.unity
-    guid: dbaf166e6e7519b428f2db308c1fbda9
-  - enabled: 1
-    path: Assets/Scenes/survival.unity
-    guid: c80ce5a39d1a96d44812395db9a77ecd
+    path: Assets/Scenes/Title.unity
+    guid: 975c9ad4c06f19d4fa56e387300e84e6
   m_configObjects: {}
