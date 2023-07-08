@@ -1698,10 +1698,22 @@ MonoBehaviour:
   - root
   - radiationDeath
   - survival
+  - gotBag
+  - getTape
+  - getRuler
+  - getKey
+  - getBox
+  - chairFell
   realityPrefabs:
   - {fileID: 5366854876785214771, guid: af291c46c617028439475fef23265594, type: 3}
   - {fileID: 5366854876785214771, guid: 3e6e2f94f76edc34e89f985d62939ce5, type: 3}
   - {fileID: 5366854876785214771, guid: 926d5983db4e0ef40a589ac4f04c7e1d, type: 3}
+  - {fileID: 5366854876785214771, guid: 064cefb6e2d6ebe4b9016dfa31e55eae, type: 3}
+  - {fileID: 5366854876785214771, guid: 9cad95e5bc7afd742a44251470cf0714, type: 3}
+  - {fileID: 5366854876785214771, guid: b699885a177e70744b80b6bbf3775988, type: 3}
+  - {fileID: 5366854876785214771, guid: 77ed03851cbc7c744a4a57434e440120, type: 3}
+  - {fileID: 5366854876785214771, guid: 60daa49d2c114e24fb6c55cfda07325e, type: 3}
+  - {fileID: 5366854876785214771, guid: db29eac30d5f4b94781535079d5bf861, type: 3}
   realityContainer: {fileID: 263154052}
   currentRealityId: 
 --- !u!4 &1003423895
