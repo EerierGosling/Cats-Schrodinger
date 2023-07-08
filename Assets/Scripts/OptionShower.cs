@@ -13,17 +13,19 @@ public class OptionShower : MonoBehaviour
     public TimelineManager timelineManager;
     public Vector3 button1Pos;
     public Vector3 button2Pos;
-    
+
     public GameObject dimmer;
     public GameObject splitText;
     public LineAnimator line1;
     public LineAnimator line2;
 
     public bool inMenu = false;
+    private AudioSource audioSource;
 
     void Start()
     {
         timelineManager.OnRealitySwap += RemoveButtons;
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void RemoveButtons(string id)
@@ -44,6 +46,7 @@ public class OptionShower : MonoBehaviour
 
     public void OpenNav(string text1, string text2, string load1, string load2)
     {
+        audioSource.Play();
         inMenu = true;
 
         dimmer.SetActive(true);
