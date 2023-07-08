@@ -9,7 +9,7 @@ public class LineAnimator : MonoBehaviour
     private LineRenderer lineRenderer;
     private Vector3[] LinePoints;
 
-    void Start()
+    void Awake()
     {
         lineRenderer = GetComponent<LineRenderer>();
 
@@ -20,8 +20,10 @@ public class LineAnimator : MonoBehaviour
         lineRenderer.SetPositions(LinePoints);
     }
 
-    public void Reset()
+    public void ResetAnim()
     {
+        if(lineRenderer == null) lineRenderer = GetComponent<LineRenderer>();
+
         lineRenderer.positionCount = 1;
         lineRenderer.SetPositions(LinePoints);
     }
@@ -61,6 +63,7 @@ public class LineAnimator : MonoBehaviour
             while(timeElapsed < timeAlloc[i - 1])
             {
                 timeElapsed += Time.deltaTime;
+
                 lineRenderer.SetPosition(i, Vector3.Lerp(LinePoints[i - 1], LinePoints[i], timeElapsed / timeAlloc[i - 1]));
                 yield return null;
             }

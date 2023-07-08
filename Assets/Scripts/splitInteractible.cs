@@ -30,7 +30,8 @@ public class splitInteractible : MonoBehaviour
             float distance = Vector3.Distance(cat.transform.position, transform.position);
 
             // if the player is close enough, interact
-            if(distance < 1.5f) Interact();
+            // if(distance < 1.5f) Interact();
+            Interact();
         }
     }
 

@@ -26,8 +26,9 @@ public class OptionShower : MonoBehaviour
     public void RemoveButtons(string id)
     {
         dimmer.SetActive(false);
-        line1.Reset();
-        line2.Reset();
+
+        line1.ResetAnim();
+        line2.ResetAnim();
 
         foreach (Transform child in optionsParent.transform)
         {
