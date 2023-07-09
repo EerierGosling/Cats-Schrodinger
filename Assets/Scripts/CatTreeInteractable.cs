@@ -55,8 +55,8 @@ public class CatTreeInteractable : MonoBehaviour
         }
         else {
             transform.position -= new Vector3(1.25f, 0, 0);
-            invManager.RemoveItem("screwdriver");
-            invManager.RemoveItem("rope");
+            //invManager.RemoveItem("screwdriver");
+            //invManager.RemoveItem("rope");
             moved = true;
             return;
         }

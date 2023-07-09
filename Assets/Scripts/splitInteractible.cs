@@ -64,11 +64,11 @@ public class splitInteractible : MonoBehaviour
         if(this.gameObject.name != "FrontDoor")
         {
             optionShower.OpenNav(text1, text2, load1, load2);
-            inventoryManager.RemoveItem(requiredItem);
+            //inventoryManager.RemoveItem(requiredItem);
         } else
         {
             SceneManager.LoadScene("Win");
-            inventoryManager.RemoveItem(requiredItem);
+            //inventoryManager.RemoveItem(requiredItem);
         }
     }
 }
