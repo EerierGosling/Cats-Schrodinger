@@ -500,7 +500,7 @@ PrefabInstance:
     - target: {fileID: 8104732312733938334, guid: e3fefe69e088db649a5a98da56186b84, type: 3}
       propertyPath: dimmer
       value: 
-      objectReference: {fileID: 1402561206}
+      objectReference: {fileID: 1402561209}
     - target: {fileID: 8104732312733938334, guid: e3fefe69e088db649a5a98da56186b84, type: 3}
       propertyPath: splitText
       value: 
@@ -616,7 +616,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 750, y: -190}
+  m_AnchoredPosition: {x: 750, y: 0}
   m_SizeDelta: {x: 60, y: 190}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &462667989
@@ -8931,13 +8931,14 @@ GameObject:
   m_Component:
   - component: {fileID: 1402561207}
   - component: {fileID: 1402561208}
+  - component: {fileID: 1402561209}
   m_Layer: 0
   m_Name: Dim
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1402561207
 Transform:
   m_ObjectHideFlags: 0
@@ -8995,7 +8996,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 43
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.7529412}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -9005,6 +9006,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1402561209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1402561206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7e316c1d386044c094dca61941f4a7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1452433374
 GameObject:
   m_ObjectHideFlags: 0
