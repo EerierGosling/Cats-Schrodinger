@@ -52,6 +52,9 @@ public class CatController : MonoBehaviour
 
     private void Update()
     {
+        Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mouseWorldPosition.z = 0f;
+
         if (Input.GetMouseButtonDown(1))
         {
             Debug.Log("Right Click");
