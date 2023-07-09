@@ -4,16 +4,10 @@ using UnityEngine;
 
 public class DimController : MonoBehaviour
 {
-    public float SetDim(float alpha)
+    public void SetDim(float alpha, float r = 0f, float g = 0f, float b = 0f)
     {
-        Debug.Log("Setting dim to " + alpha);
-
         SpriteRenderer rend = GetComponent<SpriteRenderer>();
 
-        Color color = rend.color;
-        color.a = alpha;
-        rend.color = color;
-
-        return alpha;
+        rend.color = new Color(r, g, b, alpha);
     }
 }

@@ -29,42 +29,10 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7171609848087390840}
-  - {fileID: 4849236161920746068}
   - {fileID: 7648804523869599563}
   - {fileID: 4829695806739483679}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &7020514069297884458
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4849236161920746068}
-  m_Layer: 0
-  m_Name: InteractShelf
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4849236161920746068
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7020514069297884458}
-  m_LocalRotation: {x: -0, y: -0, z: -0.23997393, w: 0.97077936}
-  m_LocalPosition: {x: 8.49, y: 4.61, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3720555877037391063}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &5830669051109675354
 PrefabInstance:
@@ -280,6 +248,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   promptPrefab: {fileID: 808461945791076481, guid: 7f34fd1ec0e2c8d428414a904ba390cf, type: 3}
+  requiredItem: 
   text1: The drawer opens
   text2: The shelf almost tips
   load1: getRuler
