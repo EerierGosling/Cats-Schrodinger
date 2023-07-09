@@ -393,13 +393,37 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8994242076289310200, guid: 6d1f417732bf241df891c269c05c38e0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 184695669220793332}
   m_SourcePrefab: {fileID: 100100000, guid: 6d1f417732bf241df891c269c05c38e0, type: 3}
 --- !u!4 &3306401827513044365 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1652911161364403688, guid: 6d1f417732bf241df891c269c05c38e0, type: 3}
   m_PrefabInstance: {fileID: 4256714187897133157}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &5170999354233832861 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8994242076289310200, guid: 6d1f417732bf241df891c269c05c38e0, type: 3}
+  m_PrefabInstance: {fileID: 4256714187897133157}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &184695669220793332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5170999354233832861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f381e7f9f44340c6b29c2ecc7032739, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  promptPrefab: {fileID: 808461945791076481, guid: 7f34fd1ec0e2c8d428414a904ba390cf, type: 3}
+  pickupText: You got the Screwdriver!
+  grantItem: screwDriver
+  grantItemSprite: {fileID: 21300000, guid: f4d696a969136486492311a2e5223659, type: 3}
 --- !u!1001 &4733137733012133786
 PrefabInstance:
   m_ObjectHideFlags: 0
