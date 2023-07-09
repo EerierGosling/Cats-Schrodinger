@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class TimerScript : MonoBehaviour
 {
@@ -22,7 +23,7 @@ public class TimerScript : MonoBehaviour
     {
         if (TimerOn)
         {
-            if(TimeLeft > 0)
+            if(TimeLeft >= 0)
             {
                 TimeLeft -= Time.deltaTime;
                 updateTimer(TimeLeft); 
@@ -30,6 +31,7 @@ public class TimerScript : MonoBehaviour
             else
             {
                 Debug.Log("Happy new yeaR!");
+SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
                 TimeLeft = 0;
                 TimerOn = false;
 
@@ -48,5 +50,8 @@ public class TimerScript : MonoBehaviour
         float seconds = Mathf.FloorToInt(currentTime % 60);
 
         Timertxt.text = string.Format("{0:00} : {1:00}", minutes, seconds);
+
     }
+
+
 }
