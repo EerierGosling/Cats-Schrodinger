@@ -382,7 +382,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   promptPrefab: {fileID: 808461945791076481, guid: 7f34fd1ec0e2c8d428414a904ba390cf, type: 3}
-  requiredItem: 
+  requiredItem: key
   text1: The drawer opens
   text2: The shelf almost tips
   load1: getRope
