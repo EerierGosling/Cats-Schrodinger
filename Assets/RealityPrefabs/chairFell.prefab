@@ -32,6 +32,7 @@ Transform:
   - {fileID: 7648804523869599563}
   - {fileID: 4829695806739483679}
   - {fileID: 2929509097750427538}
+  - {fileID: 4004297263665853452}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -233,6 +234,72 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4033278693522927555, guid: 607f53cbd88054c71bc7fba0b48369f5, type: 3}
   m_PrefabInstance: {fileID: 8430618816369877980}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8741902148228452988
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 3720555877037391063}
+    m_Modifications:
+    - target: {fileID: 3864790698905944437, guid: 8b5a2a37df9f14a8188c954de2e8feb0, type: 3}
+      propertyPath: m_Name
+      value: SlabDown
+      objectReference: {fileID: 0}
+    - target: {fileID: 5675492701156320880, guid: 8b5a2a37df9f14a8188c954de2e8feb0, type: 3}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 5675492701156320880, guid: 8b5a2a37df9f14a8188c954de2e8feb0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.89
+      objectReference: {fileID: 0}
+    - target: {fileID: 5675492701156320880, guid: 8b5a2a37df9f14a8188c954de2e8feb0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 12.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 5675492701156320880, guid: 8b5a2a37df9f14a8188c954de2e8feb0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5675492701156320880, guid: 8b5a2a37df9f14a8188c954de2e8feb0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5675492701156320880, guid: 8b5a2a37df9f14a8188c954de2e8feb0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5675492701156320880, guid: 8b5a2a37df9f14a8188c954de2e8feb0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5675492701156320880, guid: 8b5a2a37df9f14a8188c954de2e8feb0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5675492701156320880, guid: 8b5a2a37df9f14a8188c954de2e8feb0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5675492701156320880, guid: 8b5a2a37df9f14a8188c954de2e8feb0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5675492701156320880, guid: 8b5a2a37df9f14a8188c954de2e8feb0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8b5a2a37df9f14a8188c954de2e8feb0, type: 3}
+--- !u!4 &4004297263665853452 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5675492701156320880, guid: 8b5a2a37df9f14a8188c954de2e8feb0, type: 3}
+  m_PrefabInstance: {fileID: 8741902148228452988}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8995468298422493859
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -318,8 +385,8 @@ MonoBehaviour:
   requiredItem: 
   text1: The drawer opens
   text2: The shelf almost tips
-  load1: getRuler
-  load2: getBox
+  load1: getRope
+  load2: getScrewdriver
 --- !u!4 &7648804523869599563 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1652911161364403688, guid: 6d1f417732bf241df891c269c05c38e0, type: 3}
