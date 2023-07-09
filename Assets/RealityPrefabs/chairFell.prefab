@@ -385,8 +385,8 @@ MonoBehaviour:
   requiredItem: 
   text1: The drawer opens
   text2: The shelf almost tips
-  load1: getRuler
-  load2: getBox
+  load1: getRope
+  load2: getScrewdriver
 --- !u!4 &7648804523869599563 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1652911161364403688, guid: 6d1f417732bf241df891c269c05c38e0, type: 3}
