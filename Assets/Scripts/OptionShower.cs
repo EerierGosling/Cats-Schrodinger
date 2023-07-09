@@ -49,7 +49,13 @@ public class OptionShower : MonoBehaviour
         audioSource.Play();
         inMenu = true;
 
-        dimmer.SetDim(0.7f);
+        if (load1 == "survival" || load2 == "survival") {
+            dimmer.SetDim(1f);
+        }
+        else {
+            dimmer.SetDim(0.7f);
+        }
+
         splitText.SetActive(true);
 
         line1.beginAnimation();
