@@ -11,6 +11,8 @@ public class TimelineManager : MonoBehaviour
 
     public string currentRealityId;
 
+    public GameObject dim;
+
     void Start()
     {
         SwapReality("root");
@@ -21,6 +23,15 @@ public class TimelineManager : MonoBehaviour
     public void SwapReality(string id)
     {
         currentRealityId = id;
+
+        DimController dimController = dim.GetComponent<DimController>();
+
+        if (currentRealityId == "root") {
+            dimController.SetDim(1);
+        }
+        else {
+             dimController.SetDim(0.75f);
+        }
 
         OnRealitySwap?.Invoke(id);
 
