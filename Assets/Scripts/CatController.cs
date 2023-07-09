@@ -72,4 +72,9 @@ public class CatController : MonoBehaviour
 
         animator.SetBool("Moving", false);
     }
+
+    public void GiveBag()
+    {
+        animator.SetBool("HasBag", true);
+    }
 }

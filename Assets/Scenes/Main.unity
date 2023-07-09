@@ -670,6 +670,7 @@ MonoBehaviour:
   - {fileID: 1848625880}
   - {fileID: 1689215900}
   popupText: {fileID: 831226205}
+  player: {fileID: 827927693}
 --- !u!1001 &496128094
 PrefabInstance:
   m_ObjectHideFlags: 0

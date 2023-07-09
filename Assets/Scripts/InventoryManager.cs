@@ -8,6 +8,7 @@ public class InventoryManager : MonoBehaviour
 {
     public Image[] Icons;
     public GameObject popupText;
+    public GameObject player;
     
     private string[] items;
 
@@ -31,12 +32,18 @@ public class InventoryManager : MonoBehaviour
         for(int i = 0; i < items.Length; i++)
         {
             if(items[i] == "" || items[i] == null)
-            {
+            { 
                 items[i] = id;
                 Icons[i].sprite = icon;
                 Icons[i].enabled = true;
+                if(items[i] == "bag")
+                {
+                    player.GetComponent<CatController>().GiveBag();
+                }
                 return;
             }
+
+            
         }
     }
 
