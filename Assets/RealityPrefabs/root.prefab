@@ -297,6 +297,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   promptPrefab: {fileID: 808461945791076481, guid: 7f34fd1ec0e2c8d428414a904ba390cf, type: 3}
+  requiredItem: 
   text1: The bag falls off
   text2: The chair falls back
   load1: gotBag
@@ -354,6 +355,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3720555877037391063}
     m_Modifications:
+    - target: {fileID: 563079694509468213, guid: 549f6f292c67147faa080c0e579d2a46, type: 3}
+      propertyPath: m_SortingOrder
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 982132232884148263, guid: 549f6f292c67147faa080c0e579d2a46, type: 3}
       propertyPath: m_Name
       value: box (1)
