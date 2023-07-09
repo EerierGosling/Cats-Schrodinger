@@ -1975,7 +1975,6 @@ MonoBehaviour:
   - {fileID: 5366854876785214771, guid: db29eac30d5f4b94781535079d5bf861, type: 3}
   realityContainer: {fileID: 263154052}
   currentRealityId: 
-  dim: {fileID: 0}
 --- !u!4 &1003423895
 Transform:
   m_ObjectHideFlags: 0
