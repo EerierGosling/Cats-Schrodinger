@@ -1964,9 +1964,9 @@ MonoBehaviour:
   - survival
   - gotBag
   - getTape
-  - getRuler
+  - getRope
   - getKey
-  - getBox
+  - getScrewdriver
   - chairFell
   realityPrefabs:
   - {fileID: 5366854876785214771, guid: af291c46c617028439475fef23265594, type: 3}
