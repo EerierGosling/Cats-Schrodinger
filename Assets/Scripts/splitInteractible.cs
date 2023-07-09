@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 public class splitInteractible : MonoBehaviour
 {
@@ -16,6 +18,8 @@ public class splitInteractible : MonoBehaviour
     public string text2;
     public string load1;
     public string load2;
+    public SceneManager sceneManager;
+    
 
     void Start()
     {
@@ -51,13 +55,20 @@ public class splitInteractible : MonoBehaviour
 
     public void Interact()
     {
-        if(!inventoryManager.HasItem(requiredItem) && requiredItem != "")
+        if (!inventoryManager.HasItem(requiredItem) && requiredItem != "")
         {
             inventoryManager.ShowPopup("You are missing something...", 3f);
             return;
         }
 
-        optionShower.OpenNav(text1, text2, load1, load2);
-        inventoryManager.RemoveItem(requiredItem);
+        if(this.gameObject.name != "FrontDoor")
+        {
+            optionShower.OpenNav(text1, text2, load1, load2);
+            inventoryManager.RemoveItem(requiredItem);
+        } else
+        {
+            SceneManager.LoadScene("Win");
+            inventoryManager.RemoveItem(requiredItem);
+        }
     }
 }
