@@ -12,7 +12,6 @@ public class CatController : MonoBehaviour
     private Rigidbody2D rb;
     public float moveSpeed = 5f;
     public OptionShower optionShower;
-    public Interactable focus;
     public Camera cam;
     private Vector3 startPos;
     private Animator animator;
@@ -50,52 +49,11 @@ public class CatController : MonoBehaviour
         rb.velocity = moveVector * moveSpeed;
     }
 
-    private void Update()
-    {
-        Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        mouseWorldPosition.z = 0f;
-
-        if (Input.GetMouseButtonDown(1))
-        {
-            Debug.Log("Right Click");
-            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-
-            if (Physics.Raycast(ray, out hit, 100))
-            {
-                Interactable interactable = hit.collider.GetComponent<Interactable>();
-
-                if (interactable != null)
-                {
-                    SetFocus(interactable);
-                }
-            }
-        }
-    }
-
     public void ResetPos()
     {
         transform.position = startPos;
     }
 
-    void SetFocus(Interactable newFocus)
-    {
-        if (newFocus != focus)
-        {
-            if (focus != null)
-                focus.OnDefocused();
-            focus = newFocus;
-        }
-
-        newFocus.OnFocused(transform);
-    }
-
-    void RemoveFocus()
-    {
-        if (focus != null)
-            focus.OnDefocused();
-        focus = null;
-    }
     private void OnMovementPerformed(InputAction.CallbackContext value)
     {
         moveVector = value.ReadValue<Vector2>();

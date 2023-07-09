@@ -1,44 +1,53 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Interactable : MonoBehaviour
 {
-    public float radius = 3f;
-    public Transform interactionTransform;
+    public GameObject promptPrefab;
+    public string pickupText;
+    public string grantItem;
+    public Sprite grantItemSprite;
 
-    bool isFocus = false;
-    Transform player;
-    bool hasInteracted = false;
+    private InventoryManager invManager;
+    private GameObject prompt;
+    private GameObject cat;
 
-    public virtual void Interact () {
-        // This method is meant to be overwritten
-        Debug.Log("Interacting with " + transform.name);
+    void Awake()
+    {
+        cat = GameObject.FindGameObjectWithTag("Player");
+        invManager = FindObjectOfType<InventoryManager>();
+
+        prompt = Instantiate(promptPrefab, transform.position, Quaternion.identity);
+
+        prompt.transform.position += new Vector3(0, 1f, 0);
+        prompt.transform.parent = transform;
     }
 
-    void Update () {
-        if (isFocus && !hasInteracted) {
-            float distance = Vector3.Distance(player.position, interactionTransform.position);
-            if (distance <= radius) {
-                Debug.Log("Interact");
-                Interact();
-                hasInteracted = true;
-            }
+    void Update()
+    {
+        if(!prompt) return;
+
+        // get the distance to the player
+        float distance = Vector3.Distance(cat.transform.position, transform.position);
+
+        // if the player is close enough, show the prompt
+        prompt.SetActive(distance < 1.5f);
+
+        if(Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return))
+        {
+            // if the player is close enough, interact
+            if(distance < 1.5f) Interact();
         }
     }
 
-    public void OnFocused (Transform playerTransform) {
-        isFocus = true;
-        player = playerTransform;
-        hasInteracted = false;
-    }
+    void Interact()
+    {
+        if(grantItem != "")
+        {
+            invManager.AddItem(grantItem, grantItemSprite);
+            Destroy(gameObject);
+        }
 
-    public void OnDefocused () {
-        isFocus = false;
-        player = null;
-        hasInteracted = false;
-    }
-
-    void OnDrawGizmosSelected () {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(interactionTransform.position, radius);
+        invManager.ShowPopup(pickupText, 5f);
     }
 }
