@@ -6,10 +6,10 @@ using TMPro;
 
 public class InventoryManager : MonoBehaviour
 {
-    public List<Image> Icons;
+    public Image[] Icons;
     public GameObject popupText;
     
-    private List<string> items = new List<string>();
+    private string[] items;
 
     public void ShowPopup(string text, float duration)
     {
@@ -28,34 +28,44 @@ public class InventoryManager : MonoBehaviour
 
     public void AddItem(string id, Sprite icon)
     {
-        if(items.Contains(id))
-            return;
-
-        if(items.Count >= Icons.Count)
-            return;
-
-        items.Add(id);
-        Icons[items.Count - 1].sprite = icon;
+        for(int i = 0; i < items.Length; i++)
+        {
+            if(items[i] == "" || items[i] == null)
+            {
+                items[i] = id;
+                Icons[i].sprite = icon;
+                Icons[i].enabled = true;
+                return;
+            }
+        }
     }
 
     public void RemoveItem(string id)
     {
-        if(!items.Contains(id))
-            return;
-
-        items.Remove(id);
-        Icons[items.Count].sprite = null;
+        for(int i = 0; i < items.Length; i++)
+        {
+            if(items[i] == id)
+            {
+                items[i] = "";
+                Icons[i].sprite = null;
+                Icons[i].enabled = false;
+                return;
+            }
+        }
     }
 
-    public void Clear()
+    void Start()
     {
-        items.Clear();
-        foreach(var icon in Icons)
-            icon.sprite = null;
+        items = new string[Icons.Length];
     }
 
     public bool HasItem(string id)
     {
-        return items.Contains(id);
+        for(int i = 0; i < items.Length; i++)
+        {
+            if(items[i] == id) return true;
+        }
+
+        return false;
     }
 }
