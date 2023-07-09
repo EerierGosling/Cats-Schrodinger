@@ -60,15 +60,8 @@ public class splitInteractible : MonoBehaviour
             inventoryManager.ShowPopup("You are missing something...", 3f);
             return;
         }
+        optionShower.OpenNav(text1, text2, load1, load2);
+        //inventoryManager.RemoveItem(requiredItem);
 
-        if(this.gameObject.name != "FrontDoor")
-        {
-            optionShower.OpenNav(text1, text2, load1, load2);
-            //inventoryManager.RemoveItem(requiredItem);
-        } else
-        {
-            SceneManager.LoadScene("Win");
-            //inventoryManager.RemoveItem(requiredItem);
-        }
     }
 }
