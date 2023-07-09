@@ -241,7 +241,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3720555877037391063}
   m_Layer: 0
-  m_Name: getRuler
+  m_Name: getRope
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
