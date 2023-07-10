@@ -49,29 +49,6 @@ public class CatController : MonoBehaviour
         rb.velocity = moveVector * moveSpeed;
     }
 
-    private void Update()
-    {
-        Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        mouseWorldPosition.z = 0f;
-
-        if (Input.GetMouseButtonDown(1))
-        {
-            Debug.Log("Right Click");
-            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-
-            if (Physics.Raycast(ray, out hit, 100))
-            {
-                Interactable interactable = hit.collider.GetComponent<Interactable>();
-
-                if (interactable != null)
-                {
-                    SetFocus(interactable);
-                }
-            }
-        }
-    }
-
     public void ResetPos()
     {
         transform.position = startPos;
