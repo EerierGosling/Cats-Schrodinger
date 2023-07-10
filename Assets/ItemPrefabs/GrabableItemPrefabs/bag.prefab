@@ -98,6 +98,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   promptPrefab: {fileID: 808461945791076481, guid: 7f34fd1ec0e2c8d428414a904ba390cf, type: 3}
-  pickupText: You got the bag with the safe password!
+  pickupText: You got the bag! Now you can pick up items.
   grantItem: bag
   grantItemSprite: {fileID: 21300000, guid: eb75ee7f50aa93e4f8e8d2d3ade28a51, type: 3}
