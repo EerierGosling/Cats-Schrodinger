@@ -18,8 +18,6 @@ public class splitInteractible : MonoBehaviour
     public string text2;
     public string load1;
     public string load2;
-    public SceneManager sceneManager;
-    
 
     void Start()
     {
@@ -44,12 +42,11 @@ public class splitInteractible : MonoBehaviour
         // if the player is close enough, show the prompt
         prompt.SetActive(distance < 1.5f);
 
-        if(Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return))
         {
 
             // if the player is close enough, interact
-            if(distance < 1.5f) Interact();
-            // Interact();
+            if (distance < 1.5f) Interact();
         }
     }
 
@@ -60,8 +57,14 @@ public class splitInteractible : MonoBehaviour
             inventoryManager.ShowPopup("You are missing something...", 3f);
             return;
         }
-        optionShower.OpenNav(text1, text2, load1, load2);
-        //inventoryManager.RemoveItem(requiredItem);
-
+        else if (this.name == "FrontDoor" && inventoryManager.HasItem(requiredItem) == true)
+        {
+            inventoryManager.RemoveItem(requiredItem);
+            SceneManager.LoadScene("win");
+        }
+        else
+        {
+            optionShower.OpenNav(text1, text2, load1, load2);
+        }
     }
 }
