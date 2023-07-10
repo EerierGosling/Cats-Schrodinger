@@ -12,7 +12,6 @@ public class CatController : MonoBehaviour
     private Rigidbody2D rb;
     public float moveSpeed = 5f;
     public OptionShower optionShower;
-    public Interactable focus;
     public Camera cam;
     private Vector3 startPos;
     private Animator animator;
@@ -78,24 +77,6 @@ public class CatController : MonoBehaviour
         transform.position = startPos;
     }
 
-    void SetFocus(Interactable newFocus)
-    {
-        if (newFocus != focus)
-        {
-            if (focus != null)
-                focus.OnDefocused();
-            focus = newFocus;
-        }
-
-        newFocus.OnFocused(transform);
-    }
-
-    void RemoveFocus()
-    {
-        if (focus != null)
-            focus.OnDefocused();
-        focus = null;
-    }
     private void OnMovementPerformed(InputAction.CallbackContext value)
     {
         moveVector = value.ReadValue<Vector2>();
@@ -113,5 +94,10 @@ public class CatController : MonoBehaviour
         moveVector = Vector2.zero;
 
         animator.SetBool("Moving", false);
+    }
+
+    public void GiveBag()
+    {
+        animator.SetBool("HasBag", true);
     }
 }

@@ -2,9 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class reset : MonoBehaviour
 {
+    public TextMeshProUGUI text;
+
     private TimelineManager timelineManager;
     private Button button;
     private CatController catController;
@@ -33,5 +36,7 @@ public class reset : MonoBehaviour
         catController.ResetPos();
 
         audioSource.Play();
+
+        text.text = "";
     }
 }

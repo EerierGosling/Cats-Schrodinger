@@ -14,7 +14,7 @@ public class OptionShower : MonoBehaviour
     public Vector3 button1Pos;
     public Vector3 button2Pos;
 
-    public GameObject dimmer;
+    public DimController dimmer;
     public GameObject splitText;
     public LineAnimator line1;
     public LineAnimator line2;
@@ -32,7 +32,7 @@ public class OptionShower : MonoBehaviour
     {
         inMenu = false;
 
-        dimmer.SetActive(false);
+        dimmer.SetDim(0f);
         splitText.SetActive(false);
 
         line1.ResetAnim();
@@ -49,7 +49,13 @@ public class OptionShower : MonoBehaviour
         audioSource.Play();
         inMenu = true;
 
-        dimmer.SetActive(true);
+        if (load1 == "survival" || load2 == "survival") {
+            dimmer.SetDim(1f);
+        }
+        else {
+            dimmer.SetDim(0.7f);
+        }
+
         splitText.SetActive(true);
 
         line1.beginAnimation();

@@ -2,24 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 public class splitInteractible : MonoBehaviour
 {
     private OptionShower optionShower;
     private GameObject cat;
     private GameObject prompt;
+    private InventoryManager inventoryManager;
 
     public GameObject promptPrefab;
+    public string requiredItem = null;
     public string text1;
     public string text2;
     public string load1;
     public string load2;
+    public SceneManager sceneManager;
+    
 
     void Start()
     {
         // get the object tagged "Player"
         cat = GameObject.FindGameObjectWithTag("Player");
         optionShower = GameObject.FindObjectOfType<OptionShower>();
+        inventoryManager = GameObject.FindObjectOfType<InventoryManager>();
 
         prompt = Instantiate(promptPrefab, transform.position, Quaternion.identity);
         // place it above the object
@@ -48,6 +55,13 @@ public class splitInteractible : MonoBehaviour
 
     public void Interact()
     {
+        if (!inventoryManager.HasItem(requiredItem) && requiredItem != "")
+        {
+            inventoryManager.ShowPopup("You are missing something...", 3f);
+            return;
+        }
         optionShower.OpenNav(text1, text2, load1, load2);
+        //inventoryManager.RemoveItem(requiredItem);
+
     }
 }
